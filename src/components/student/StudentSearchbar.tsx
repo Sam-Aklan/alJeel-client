@@ -66,7 +66,8 @@ export const StudentSearchbar = ({
   }
   const handleSelection = (keys:SharedSelection)=>{
     setSelectedKeys(keys)
-    console.log("keys selections",keys["size"])
+    // console.log("keys selections",keys["size"])
+    // @ts-ignore
     if(keys["size"] === 0) {
       form.setValue("level",undefined)
       console.log("keys levels",form.getValues("level"))
