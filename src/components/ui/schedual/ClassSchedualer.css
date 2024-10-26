@@ -1,0 +1,236 @@
+.calendar-container {
+    padding: 20px;
+    height: 100vh;
+   /* Use 100% of the viewport height */
+    width: 100vw;
+   /* Use 100% of the viewport width */
+    display: flex;
+    flex-direction: column;
+
+}
+.react-big-calendar {
+    flex-grow: 1;
+   /* Allows the calendar to fill the container */
+    overflow: hidden;
+    height: 100%;
+   /* Prevents overflow issues */
+}
+.custom-day {
+    color: #ccc;
+}
+/* Centering date numbers in each cell */
+.rbc-day-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rbc-day-bg.rbc-today {
+    background-color: unset;
+}
+.rbc-off-range-bg {
+    background-color: transparent;
+}
+.rbc-time-slot{
+min-height: 70px;
+min-width: 100%;
+z-index: 1;
+/* height: 100% !important; */
+}
+.rbc-events-container{
+    min-width: 100% !important;
+   
+}
+.rbc-calender{
+    height: 100%;
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+}
+.rbc-event,
+.rbc-background-event{
+    z-index: 2;
+    padding: 0px !important;
+    border:none !important;
+}
+.rbc-event-label{
+    display: none !important;
+}
+/* Alternatively, if the date itself is wrapped in an element */
+ .rbc-month-view{
+    margin-top: 10px;
+    border-top: 1px solid #000;
+    height: 100%;
+ }
+.rbc-month-row .rbc-month-header{
+    height: 50px !important;
+}
+.rbc-date-cell {
+    color: #000;
+    text-align: center;
+    text-wrap: wrap;
+    border-left-width: 2px;
+    padding: 2px;
+    height: 12rem;
+    width: 4rem;
+   /* Additional styling to vertically center if needed */
+}
+.rbc-date-cell.rbc-off-range {
+    color: #ddd;
+   /* background-color: var(--white-color);
+    */
+}
+.rbc-header {
+   /* border-bottom-color: transparent;
+    */
+}
+
+.rbc-row .rbc-month-header{
+    border-top-width:1px  !important;
+    margin-top: 10px !important;
+    color: #0476D0 !important;
+}
+.rbc-header + .rbc-header {
+    border-left-color: transparent;
+}
+.rbc-month-view {
+    border-top-color: transparent;
+    height: 100%;
+}
+.rbc-now button.rbc-button-link {
+    background: linear-gradient(90deg, #00008B, #0476D0);
+    color: #fff;
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+}
+.agenda-calendar .rbc-header {
+    display: none;
+}
+.rbc-agenda-view{
+    height: 100% !important;
+}
+.agenda-calendar .rbc-agenda-view  {
+    border-color: transparent;
+    height: 100%;
+    overflow: hidden !important;
+}
+
+
+.agenda-calendar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rbc-agenda-content{
+    height: 100%;
+    overflow: auto;
+}
+.rbc-agenda-content::-webkit-scrollbar{
+    width: 10px;
+}
+.rbc-agenda-content::-webkit-scrollbar-track{
+    border-radius: 5px;
+    /* background-color: #0476D0; */
+    border: 1px solid #cacaca;
+}
+
+.rbc-agenda-content::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+    background-color: #0476D0;
+}
+
+
+table.rbc-agenda-table{
+    border-width:1px  !important;
+    border:#0476D0 !important;
+    overflow-x: hidden;
+}
+table.rbc-agenda-table>tbody>tr{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.agenda-calendar tbody tr {
+    border-radius: 8px;
+    opacity: 1;
+    display: block;
+    width: 360px !important;
+    max-width: 600px !important;
+    
+}
+.agenda-calendar .mobileView {
+    display: flex;
+    margin: 16px 0px;
+    overflow: hidden !important;
+}
+.agenda-calendar .mobileView:first-child {
+    margin: 0px 0px 16px 0px;
+}
+/* Styles for screens wider than 768px */
+@media (min-width: 768px) {
+    .calendar-container {
+        padding: 40px;
+   }
+}
+/* Styles for mobile devices */
+@media (max-width: 767px) {
+    .calendar-container {
+        padding: 10px;
+   }
+}
+@media only screen and (max-width: 768px) {
+   /* Hide header elements that are not needed */
+   /* Adjust the day size and padding */
+   /* Adjust selected day styling */
+   /* Adjust the month label */
+   /* Show minimal navigation buttons */
+    .rbc-header, .rbc-toolbar {
+       /* display: none;
+        */
+   }
+    .rbc-header {
+        border-bottom-color: transparent;
+   }
+    .rbc-month-view {
+        flex: unset;
+        height: 226px;
+        padding: 0px 60px;
+        border-color: transparent;
+   }
+    .rbc-day-bg, .rbc-date-cell {
+        padding: 8px;
+        font-size: 16px;
+       /* Adjust the font size as needed */
+        border-color: transparent !important;
+   }
+    .rbc-month-row + .rbc-month-row {
+        border-color: transparent !important;
+   }
+    .rbc-day-bg .rbc-selected {
+        background-color: blue;
+       /* Replace with the color you want */
+        color: white;
+   }
+    .rbc-toolbar-label {
+        font-size: 18px;
+       /* Adjust the font size as needed */
+        font-weight: bold;
+   }
+    .rbc-btn-group {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+   }
+
+   .rbc-now button.rbc-button-link {
+    background: linear-gradient(90deg, #00008B, #0476D0);
+    color: #fff;
+    border-radius: 999px;
+    /* width: 10px;
+    height: 10px;
+    padding: 4px; */
+}
+}
