@@ -1,13 +1,9 @@
-import { useMemo, useState } from "react"
+import { useMemo,} from "react"
 // import {DataTableExp} from '@/components/reusable/DataTableExp'
-import { ColumnDef } from "@tanstack/react-table"
+
 import {  useTeachers } from "@/api/teacher"
 import { TeacherPayload } from "@/types/teacher"
-import { columns } from "@/components/ui/columnTeacher"
-import { DataTable } from "@/components/ui/DataTableTeacher"
-import { Button } from "@/components/ui/button"
-import { Link } from "react-router-dom"
-import { Trash } from "lucide-react"
+
 import TeacherTable from "@/components/teacher/TeacherTable"
 
 

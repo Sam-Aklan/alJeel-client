@@ -1,7 +1,7 @@
 import { useLecture } from "@/api/lecture"
 import ClassSchedualer from "@/components/ui/schedual/ClassSchedualer"
 import { classesInterface } from "@/constants/events"
-import { useEffect, useMemo } from "react"
+import { useMemo } from "react"
 
 type classType = {
   id:string,
