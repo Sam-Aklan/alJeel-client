@@ -8,6 +8,6 @@ export const studentQueryKeys = {
     all: ['student'],
     details: () => [...studentQueryKeys.all, 'detail'],
     detail: (id: string) => [...studentQueryKeys.details(), id],
-    pagination: ({page,pageLimit,name,level}: StudentFilters) => [...studentQueryKeys.all, 'pagination', {page,pageLimit,name,level}],
+    pagination: ({page,pageLimit,name,levelId}: StudentFilters) => [...studentQueryKeys.all, 'pagination', {page,pageLimit,name,levelId}],
     infinite: () => [...studentQueryKeys.all, 'infinite'],
   };

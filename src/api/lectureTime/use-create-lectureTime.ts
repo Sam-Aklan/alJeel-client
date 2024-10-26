@@ -30,10 +30,10 @@ export function useCreateTeacher() {
     onMutate: async () => {
       await queryClient.cancelQueries({ queryKey: teacherQueryKeys.all });
     },
-    onSuccess: (data) => {
+    onSuccess: () => {
       toast.success('تم عملية الاضافة بنجاح')
     },
-    onError: (err, newUser, context?: TSFixMe) => {
+    onError: (context?: TSFixMe) => {
       queryClient.setQueryData(teacherQueryKeys.all, context.previousUsers);
     },
     onSettled: () => {

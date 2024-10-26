@@ -2,7 +2,6 @@ import moment from "moment";
 
 import { classesInterface } from "@/constants/events";
 import './customAgenda.css'
-import { ToolbarProps } from "react-big-calendar";
 
 // CustomAgendaHeader
 export const CustomAgendaHeader = () => {
@@ -15,9 +14,9 @@ export const CustomAgendaHeader = () => {
 };
 
 // CustomDateHeader
-export const CustomDateHeader = ({label}:{ label:string }) => {
-  //   return <div className="custom-date-header">{label}</div>;
-};
+// export const CustomDateHeader = ({label}:{ label:string }) => {
+//   //   return <div className="custom-date-header">{label}</div>;
+// };
 
 // CustomEvent
 export const CustomEvent = ({start,end,title}:classesInterface) => {
@@ -27,9 +26,11 @@ export const CustomEvent = ({start,end,title}:classesInterface) => {
   }
   
 
-  const viewProfile = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    console.log('view, ',event)
-  }
+  // const viewProfile = (
+  //   e:React.MouseEvent<HTMLButtonElement, MouseEvent>
+  // ) => {
+  //   console.log('view, ',event)
+  // }
  
   return (
     <div className={"custom-event overflow-x-hidden bg-white rounded-md border-r-4 border-r-primary " + "event"}>
@@ -42,10 +43,12 @@ export const CustomEvent = ({start,end,title}:classesInterface) => {
         </div>
         {"event"!== "event" && (<div className="event-bottom">
             <div className="event-avatar"></div>
-            <button className="event-action-button" onClick={viewProfile}>View Client Profile</button>
+            <button className="event-action-button" >View Client Profile</button>
         </div>)}
       </div>
-      <div className="video" onClick={videoCall}>{"event" !== "event" }</div>
+      <div className="video" onClick={videoCall}>{"event" !== "event" }
+        
+      </div>
     </div>
   );
 };

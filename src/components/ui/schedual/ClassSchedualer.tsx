@@ -1,4 +1,4 @@
-import {Calendar,HeaderProps,SlotInfo, View}from 'react-big-calendar'
+import {Calendar,SlotInfo}from 'react-big-calendar'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import 'moment/dist/locale/ar-sa'
 import {classesInterface,} from "@/constants/events";
@@ -31,7 +31,10 @@ const ClassSchedualer = ({classes}:{classes:classesInterface[]|undefined}) => {
         return () => window.removeEventListener("resize", handleResize);
       }, []);
     
-      const handleSelectEvent = (event:classesInterface,e: React.SyntheticEvent<HTMLElement>):void => {
+      const handleSelectEvent = (
+        event:classesInterface,
+        // e: React.SyntheticEvent<HTMLElement>
+      ):void => {
         // console.log(event);
         setSelectedEvent(event);
         if (!isMobile) {
@@ -52,7 +55,7 @@ const ClassSchedualer = ({classes}:{classes:classesInterface[]|undefined}) => {
         setShowForm(true); // Show the form
       };
     // console.log(moment(classes[0]?.start).isSame(classes[7]?.start,'day'))
-      const handleDrillDown = (date:Date,view:View) => {
+      const handleDrillDown = (date:Date) => {
         // If mobile, prevent default behavior
         if (isMobile) {
           
@@ -129,10 +132,10 @@ const ClassSchedualer = ({classes}:{classes:classesInterface[]|undefined}) => {
       };
     
       // CustomDay.js
-      const CustomDay = ({date}:HeaderProps) => {
-        // console.log(moment(date).format("ddd"))
-        return <div className="custom-day">{moment(date).format("dddd")}</div>;
-      };
+      // const CustomDay = ({date}:HeaderProps) => {
+      //   // console.log(moment(date).format("ddd"))
+      //   return <div className="custom-day">{moment(date).format("dddd")}</div>;
+      // };
 
   return (
     <div className={cn('h-screen w-full ',

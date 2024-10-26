@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { teacherQueryKeys } from '@/api/teacher';
 import { TSFixMe,} from '@/types';
-import {Teacher, TeacherPayload} from '@/types/teacher';
+import {TeacherPayload} from '@/types/teacher';
 import { apiClient } from '@/config/axios';
 import { AxiosError } from 'axios';
 import { toast } from 'sonner';
@@ -33,10 +33,10 @@ export function useCreateTeacher() {
     onMutate: async () => {
       await queryClient.cancelQueries({ queryKey: teacherQueryKeys.all });
     },
-    onSuccess: (data) => {
+    onSuccess: () => {
       toast.success('تم عملية الاضافة بنجاح')
     },
-    onError: (err, newUser, context?: TSFixMe) => {
+    onError: (context?: TSFixMe) => {
       queryClient.setQueryData(teacherQueryKeys.all, context.previousUsers);
     },
     onSettled: () => {

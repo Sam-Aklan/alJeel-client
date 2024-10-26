@@ -17,7 +17,7 @@ export function useInfiniteLevels({ pageLimit }: { pageLimit: number }) {
     queryKey: levelQueryKeys.infinite(),
     queryFn: getInfiniteLevelsFn,
     initialPageParam: 0,
-    getNextPageParam: (lastPage, allPages,lastPageParam) => {
+    getNextPageParam: (lastPage) => {
       if (!lastPage.data.isNext) {
         return undefined
       }

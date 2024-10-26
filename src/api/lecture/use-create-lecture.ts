@@ -33,10 +33,10 @@ export function useCreateLecture() {
     onMutate: async () => {
       await queryClient.cancelQueries({ queryKey: lectureQueryKeys.all });
     },
-    onSuccess: (data) => {
+    onSuccess: () => {
       toast.success('تم عملية الاضافة بنجاح')
     },
-    onError: (err, newLecture, context?: TSFixMe) => {
+    onError: (context?: TSFixMe) => {
       console.log(context)
       queryClient.setQueryData(lectureQueryKeys.all, context.previousLectures);
     },

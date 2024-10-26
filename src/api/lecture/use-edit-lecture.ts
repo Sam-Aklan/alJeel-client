@@ -40,7 +40,7 @@ export function useEditLecture() {
       queryClient.setQueryData(lectureQueryKeys.detail(updatedLecture.id!), updatedLecture);
       return { previousLecture: previousLecture, updatedLecture: updatedLecture };
     },
-    onError: (err, updatedLecture, context?: TSFixMe) => {
+    onError: (_, updatedLecture, context?: TSFixMe) => {
       queryClient.setQueryData(
         lectureQueryKeys.detail(updatedLecture.id!),
         context.previousLecture

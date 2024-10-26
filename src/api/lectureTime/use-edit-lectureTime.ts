@@ -39,7 +39,7 @@ export function useEditTeacher() {
       queryClient.setQueryData(teacherQueryKeys.detail(teacherId!), updatedUser);
       return { previousUser: previousUser, updatedUser: updatedUser };
     },
-    onError: (err, updatedUser, context?: TSFixMe) => {
+    onError: (context?: TSFixMe) => {
       queryClient.setQueryData(
         teacherQueryKeys.detail(teacherId!),
         context.previousUser

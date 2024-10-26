@@ -17,7 +17,7 @@ export function useInfiniteUsers({ pageLimit }: { pageLimit: number }) {
     queryKey: teacherQueryKeys.infinite(),
     queryFn: getInfiniteUsersFn,
     initialPageParam: 0,
-    getNextPageParam: (lastPage, allPages,lastPageParam) => {
+    getNextPageParam: (lastPage) => {
       if (!lastPage.data.isNext) {
         return undefined
       }

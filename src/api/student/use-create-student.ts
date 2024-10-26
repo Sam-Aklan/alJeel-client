@@ -37,10 +37,10 @@ export function useCreateStudent() {
     onMutate: async () => {
       await queryClient.cancelQueries({ queryKey: studentQueryKeys.all });
     },
-    onSuccess: (data) => {
+    onSuccess: () => {
       toast.success('تم عملية الاضافة بنجاح')
     },
-    onError: (err, newUser, context?: TSFixMe) => {
+    onError: (context?: TSFixMe) => {
       console.log("student context on error")
       console.log(context)
       context && queryClient.setQueryData(studentQueryKeys.all, context.previousStudents);

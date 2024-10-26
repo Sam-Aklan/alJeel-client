@@ -2,7 +2,6 @@ import { levelQueryKeys } from '@/api/level';
 import { apiClient } from '@/config/axios';
 import { useQuery } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
-import { toast } from 'sonner';
 
 const getLevelsFn = async () => {
   try {

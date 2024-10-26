@@ -33,14 +33,14 @@ const CustomToolBar = (
   ];
 
   // const days = ["الاحد","الاثنين","الثلاثاء","الاربعاء","الخميس","الجمعة","السبت"];
-  const [open, setOpen] = useState(false)
+  // const [open, setOpen] = useState(false)
   const [value, setValue] = useState(view as string)
   const handleViewChange = (currentValue:string) => {
     setValue(currentValue === value ? "" : currentValue)
     if (currentValue!=="") {
       onView(currentValue as View)
     }
-    setOpen(false)
+    // setOpen(false)
   }
   const goToToday = () => {
     const now = new Date();

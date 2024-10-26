@@ -37,10 +37,10 @@ export const StudentTable = ({
     // console.log(students.slice(1,2),levels.slice(1,2))
     // console.log(totalCount,isNext,prevouisPage,currentPage)
   const imagesUrl = import.meta.env.MODE==="development"?import.meta.env.VITE_IMAGES_URL:import.meta.env.VITE_IMAGES_PROD_URL
-  const [filterValue, setFilterValue] = useState("");
+  const [filterValue] = useState("");
   const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set([]));
   const [visibleColumns, setVisibleColumns] = useState<Selection>(new Set(INITIAL_VISIBLE_COLUMNS));
-  const [statusFilter, setStatusFilter] = useState<Selection>("all");
+  const [statusFilter] = useState<Selection>("all");
   // const [rowsPerPage, setRowsPerPage] = useState(5);
   const {pageLimit:rowsPerPage}= useStudentFilters()
   const [sortDescriptor, setSortDescriptor] = useState<SortDescriptor>({
@@ -48,7 +48,7 @@ export const StudentTable = ({
     direction: "ascending",
   });
   // const [first, setfirst] = useState(second)
-  const [page, setPage] = useState(currentPage);
+  const [page] = useState(currentPage);
 
   const hasSearchFilter = Boolean(filterValue);
 

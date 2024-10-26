@@ -44,7 +44,7 @@ export function useEditStudent() {
       queryClient.setQueryData(studentQueryKeys.detail(studentId!), updatedUser);
       return { previousUser: previousUser, updatedUser: updatedUser };
     },
-    onError: (err, updatedUser, context?: TSFixMe) => {
+    onError: (context?: TSFixMe) => {
       queryClient.setQueryData(
         studentQueryKeys.detail(studentId!),
         context.previousUser
