@@ -103,7 +103,7 @@ export const StudentTable = ({
       case "name":
         return (
           <User
-            avatarProps={{radius: "lg", src:  student.imagePath?import.meta.env.VITE_IMAGES_URL! + student.imagePath:''}}
+            avatarProps={{radius: "lg", src:  student.imagePath?imagesUrl + student.imagePath:''}}
             name={cellValue?.toString()}
           >
             {cellValue?.toString()}
