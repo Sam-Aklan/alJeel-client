@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@nextui-org/button";
-import { Accordion, AccordionItem, Dropdown,DropdownItem, DropdownSection, DropdownTrigger, Tooltip, DropdownMenu, Divider } from "@nextui-org/react";
+import { Accordion, AccordionItem, Dropdown,DropdownItem, DropdownSection, DropdownTrigger, Tooltip, DropdownMenu} from "@nextui-org/react";
 
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import { ChevronUpIcon, Dot,  } from "lucide-react";

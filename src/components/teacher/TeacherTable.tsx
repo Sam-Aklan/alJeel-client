@@ -1,15 +1,15 @@
 import { TeacherPayload } from "@/types/teacher";
 import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, Input, Pagination, Selection, SortDescriptor, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Tooltip } from "@nextui-org/react";
-import { ChevronDownIcon, DeleteIcon, EditIcon, EyeIcon, PlusIcon, SearchIcon } from "lucide-react";
+import { ChevronDownIcon, DeleteIcon, EditIcon,PlusIcon, SearchIcon } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
 import { columns } from "./teacherColumn";
 import { Link } from "react-router-dom";
 import { useDeleteTeacher } from "@/api/teacher";
 
-const INITIAL_VISIBLE_COLUMNS = [
-    "الاسم",
-    "التخصص",
-    "العمليات"];
+// const INITIAL_VISIBLE_COLUMNS = [
+//     "الاسم",
+//     "التخصص",
+//     "العمليات"];
 const TeacherTable = ({teacherPayload,specOptions}:{teacherPayload:TeacherPayload[],specOptions?:string[]}) => {
   const [page, setPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(3);

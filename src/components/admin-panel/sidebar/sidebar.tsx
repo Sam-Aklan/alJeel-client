@@ -1,4 +1,3 @@
-import { PanelsTopLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useStore } from "@/store/use-store";
 import { useSidebarToggle } from "@/store/use-sidebar-toggle";

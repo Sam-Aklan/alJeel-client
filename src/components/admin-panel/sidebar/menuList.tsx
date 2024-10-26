@@ -1,6 +1,6 @@
 import { LayoutGrid, Settings, Users } from "lucide-react";
 import { ReactNode } from "react";
-import { FaRegUser, FaUserGraduate } from "react-icons/fa";
+import { FaRegUser} from "react-icons/fa";
 import { MdOutlineGrade } from "react-icons/md";
 import { PiChalkboardTeacherThin } from "react-icons/pi";
 
