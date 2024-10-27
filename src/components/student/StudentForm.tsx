@@ -303,7 +303,7 @@ export const StudentForm= ({levels,studentPayload}:{levels:level[],studentPayloa
         }}/>
         <Button
           type="submit"
-          disabled={form.formState.isSubmitting}
+          isDisabled={form.formState.isSubmitting || form.formState.isLoading}
           color="primary"
           radius="sm"
         >

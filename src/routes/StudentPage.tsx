@@ -33,7 +33,7 @@ export const StudentPage = () => {
   },[studentsData])
 
   const searchAndPaginate = ()=> studentPayload.refetch()
-  const deleteStudent = async(id:string)=> await studentDel.mutateAsync(id)
+  const deleteStudent = async(id:string,oldImage?:string)=> await studentDel.mutateAsync({id,oldImage})
   // students && console.log("normalized students:",students[0])
   return (
     <div className="container flex justify-center items-center">

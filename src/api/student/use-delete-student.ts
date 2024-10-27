@@ -11,10 +11,10 @@ import { toast } from 'sonner';
 export function useDeleteStudent() {
   const queryClient = useQueryClient();
 
-  const deleteStudentFn = async (id: string) => {
+  const deleteStudentFn = async ({id,oldImage}:{id: string,oldImage?:string}) => {
     try {
-      
-      const response = await apiClient.delete(`student/${id}`);
+      console.log("user image: ", oldImage)
+      const response = await apiClient.delete(`student/${id}${oldImage?`?oldImage=${oldImage}`:""}`);
       return response;
     } catch (error : any ) {
       throw Error(error.message)

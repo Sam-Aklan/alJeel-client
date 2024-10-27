@@ -33,7 +33,7 @@ export const StudentTable = ({
     currentPage,
     levels,
     deleteStudent
-  }:StudentPagePayload&{deleteStudent:(id:string)=>void}) => {
+  }:StudentPagePayload&{deleteStudent:(id:string,oldImage?:string)=>void}) => {
     // console.log(students.slice(1,2),levels.slice(1,2))
     // console.log(totalCount,isNext,prevouisPage,currentPage)
   const imagesUrl = import.meta.env.MODE==="development"?import.meta.env.VITE_IMAGES_URL:import.meta.env.VITE_IMAGES_PROD_URL
@@ -139,7 +139,7 @@ export const StudentTable = ({
                 </Link>
                   </DropdownItem>
                 
-                <DropdownItem onClick={()=>deleteStudent(student.id)}>حذف</DropdownItem>
+                <DropdownItem onClick={()=>student?.imagePath? deleteStudent(student.id,student.imagePath):deleteStudent(student.id)}>حذف</DropdownItem>
               </DropdownMenu>
             </Dropdown>
           </div>
