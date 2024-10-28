@@ -36,7 +36,7 @@ export const StudentTable = ({
   }:StudentPagePayload&{deleteStudent:(id:string,oldImage?:string)=>void}) => {
     // console.log(students.slice(1,2),levels.slice(1,2))
     // console.log(totalCount,isNext,prevouisPage,currentPage)
-  const imagesUrl = import.meta.env.MODE==="development"?import.meta.env.VITE_IMAGES_URL:import.meta.env.VITE_IMAGES_PROD_URL
+  
   const [filterValue] = useState("");
   const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set([]));
   const [visibleColumns, setVisibleColumns] = useState<Selection>(new Set(INITIAL_VISIBLE_COLUMNS));
