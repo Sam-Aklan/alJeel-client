@@ -23,12 +23,12 @@ import { studentinfoUpdate, StudentUpdateType } from "@/types/student";
 import { useNavigate } from "react-router-dom";
 import {DateValue, parseAbsoluteToLocal} from "@internationalized/date";
 
-import { IMAGE_BASE_URL } from "@/config/enviroment";
+// import { IMAGE_BASE_URL } from "@/config/enviroment";
 
 
 export const StudentForm= ({levels,studentPayload}:{levels:level[],studentPayload?
   :StudentUpdateType}) => {
-  const [preview, setPreview] = React.useState<string | ArrayBuffer | null>(studentPayload?.image? IMAGE_BASE_URL+ studentPayload.image.name :null);
+  const [preview, setPreview] = React.useState<string | ArrayBuffer | null>(studentPayload?.image?studentPayload.image.name :null);
 
   const editStudent = useEditStudent()
 
